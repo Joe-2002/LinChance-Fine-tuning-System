@@ -1,0 +1,24 @@
+CUDA_VISIBLE_DEVICES=0 python /root/LLaMA-Factory/src/train_bash.py \
+    --stage sft \
+    --model_name_or_path /root/autodl-tmp/ZhipuAI/chatglm3-6b \
+    --do_train \
+    --dataset_dir /root/LLaMA-Factory/data \
+    --dataset lima \
+    --template chatglm3 \
+    --finetuning_type lora \
+    --lora_target query_key_value \
+    --overwrite_cache \
+    --per_device_train_batch_size 2 \
+    --gradient_accumulation_steps 2 \
+    --eval_steps 500 \
+    --lr_scheduler_type cosine \
+    --logging_steps 50 \
+    --save_steps 500 \
+    --overwrite_output_dir \
+    --output_dir /root/LLaMA-Factory/output_chatglm3 \
+    --learning_rate 5e-5 \
+    --num_train_epochs 3.0 \
+    --plot_loss \
+    --lora_rank 10 \
+    --lora_alpha 20 \
+    --fp16 
