@@ -10,7 +10,7 @@ LinChance-Fine-tuning-System
 
 <p align="center">
   <a href="https://github.com/Joe-2002/LinChance-Fine-tuning-System/">
-    <img src="images/home.png" alt="Home">
+    <img src="./images/home.png" alt="Home">
   </a>
   <p align="center">
     <br />
@@ -28,7 +28,7 @@ LinChance-Fine-tuning-System
   - [目录](#目录)
     - [项目介绍](#项目介绍)
     - [环境准备](#环境准备)
-    - [**安装步骤**](#安装步骤)
+    - [安装步骤](#安装步骤)
       - [1. 克隆仓库：](#1-克隆仓库)
       - [2. 执行下面的命令：](#2-执行下面的命令)
       - [3. 运行开启命令：](#3-运行开启命令)
@@ -53,7 +53,7 @@ LinChance-Fine-tuning-System
 
 在 [autodl](https://www.autodl.com/) 平台中租一个 3090 等 24G 显存的显卡机器，如下图所示镜像选择 `PyTorch`-->`2.0.0`-->`3.8(ubuntu20.04)`-->`11.8`
 
-![Alt text](images/autodl.png)
+![Alt text](./images/autodl.png)
 
 接下来打开刚刚租用服务器的 `JupyterLab`，并且打开其中的终端开始环境配置、模型下载和运行 `demo`。
 
@@ -68,7 +68,7 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 pip install modelscope
 ```  
 
-### **安装步骤**
+### 安装步骤
 
 #### 1. 克隆仓库：  
 
@@ -111,26 +111,26 @@ python -m streamlit run main.py
 
 4. 访问下图链接即可打开 `web ui` 页面：  
  
-    ![Alt text](images/ngrok_link.png)
+    ![Alt text](./images/ngrok_link.png)
 
 
 ### web UI 页面操作  
 
 #### 点击一键下载模型
-![Alt text](images/model_download.png)  
+![Alt text](./images/model_download.png)  
 
 #### 上传或者选择已有数据集  
 
-![Alt text](images/datasets.png)  
+![Alt text](./images/datasets.png)  
 
 #### 使用默认脚本参数开始训练
-![Alt text](images/finetuning.png)
+![Alt text](./images/finetuning.png)
 
 #### 自定义并保存微调脚本参数查看并开始训练
-![Alt text](images/finetuning_save.png)
+![Alt text](./images/finetuning_save.png)
 
 #### 与训练后模型对话测试
-![Alt text](images/chat.png) 
+![Alt text](./images/chat.png) 
  
 ### 已支持模型  
 
