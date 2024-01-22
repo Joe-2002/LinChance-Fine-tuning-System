@@ -33,7 +33,7 @@ LinChance-Fine-tuning-System
       - [2. 执行下面的命令：](#2-执行下面的命令)
       - [3. 运行开启命令：](#3-运行开启命令)
       - [4. ngrok 内网穿透](#4-ngrok-内网穿透)
-    - [web UI 页面操作](#web-ui-页面操作)
+    - [Web UI 页面操作](#web-ui-页面操作)
       - [点击一键下载模型](#点击一键下载模型)
       - [上传或者选择已有数据集](#上传或者选择已有数据集)
       - [使用默认脚本参数开始训练](#使用默认脚本参数开始训练)
@@ -51,7 +51,7 @@ LinChance-Fine-tuning-System
 
 ### 环境准备
 
-在 [autodl](https://www.autodl.com/) 平台中租一个 3090 等 24G 显存的显卡机器，如下图所示镜像选择 `PyTorch`-->`2.0.0`-->`3.8(ubuntu20.04)`-->`11.8`
+在 [autodl](https://www.autodl.com/) 平台中租一个 3090显卡 24G 显存的显卡机器，如下图所示镜像选择 `PyTorch`-->`2.0.0`-->`3.8(ubuntu20.04)`-->`11.8`
 
 ![Alt text](./images/autodl.png)
 
@@ -114,17 +114,17 @@ python -m streamlit run main.py
     ![Alt text](./images/ngrok_link.png)
 
 
-### web UI 页面操作  
+### Web UI 页面操作  
 
 #### 点击一键下载模型
-![Alt text](./images/model_download.png)  
+![Alt text](images/model_download.png)  
 
 #### 上传或者选择已有数据集  
 
-![Alt text](./images/datasets.png)  
+![Alt text](images/datasets.png)  
 
 #### 使用默认脚本参数开始训练
-![Alt text](./images/finetuning.png)
+![Alt text](images/finetuning.png)
 
 #### 自定义并保存微调脚本参数查看并开始训练
 ![Alt text](./images/finetuning_save.png)
