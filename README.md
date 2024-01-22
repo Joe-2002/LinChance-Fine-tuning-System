@@ -117,23 +117,23 @@ python -m streamlit run main.py
 
 #### 点击一键下载模型  
 
-![Alt text](images/model_download.png)  
+![Alt text](images/model_download.PNG)  
 
 #### 上传或者选择已有数据集  
 
-![Alt text](images/datasets.png)  
+![Alt text](images/datasets.PNG)  
 
 #### 使用默认脚本参数开始训练  
 
-![Alt text](images/finetuning.png)
+![Alt text](images/finetuning.PNG)
 
 #### 自定义并保存微调脚本参数查看并开始训练
 
-![Alt text](images/finetuning_save.png)
+![Alt text](images/finetuning_save.PNG)
 
 #### 与训练后模型对话测试  
 
-![Alt text](images/chat.png)
+![Alt text](images/chat.PNG)
 
 ### 已支持模型  
 
