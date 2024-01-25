@@ -25,3 +25,5 @@ pydantic
 fastapi
 sse-starlette
 matplotlib
+sentencepiece
+wandb

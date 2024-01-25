@@ -1,0 +1,45 @@
+  0%|                                                                                                                                      | 0/1070 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/root/LinChance-Fine-tuning-System/LLaMA-Factory/src/train_bash.py", line 14, in <module>
+    main()
+  File "/root/LinChance-Fine-tuning-System/LLaMA-Factory/src/train_bash.py", line 5, in main
+    run_exp()
+  File "/root/LinChance-Fine-tuning-System/LLaMA-Factory/src/llmtuner/train/tuner.py", line 29, in run_exp
+    run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
+  File "/root/LinChance-Fine-tuning-System/LLaMA-Factory/src/llmtuner/train/sft/workflow.py", line 71, in run_sft
+    train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
+  File "/root/miniconda3/lib/python3.8/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/root/miniconda3/lib/python3.8/site-packages/transformers/trainer.py", line 1869, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/root/miniconda3/lib/python3.8/site-packages/transformers/trainer.py", line 2768, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/root/miniconda3/lib/python3.8/site-packages/transformers/trainer.py", line 2791, in compute_loss
+    outputs = model(**inputs)
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.8/site-packages/accelerate/utils/operations.py", line 687, in forward
+    return model_forward(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.8/site-packages/accelerate/utils/operations.py", line 675, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/amp/autocast_mode.py", line 14, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.8/site-packages/peft/peft_model.py", line 1073, in forward
+    return self.base_model(
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.8/site-packages/peft/tuners/tuners_utils.py", line 103, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Baichuan2-7B-Chat/modeling_baichuan.py", line 686, in forward
+    outputs = self.model(
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Baichuan2-7B-Chat/modeling_baichuan.py", line 420, in forward
+    attention_mask = self._prepare_decoder_attention_mask(
+  File "/root/.cache/huggingface/modules/transformers_modules/Baichuan2-7B-Chat/modeling_baichuan.py", line 349, in _prepare_decoder_attention_mask
+    combined_attention_mask = _make_causal_mask(
+  File "/root/.cache/huggingface/modules/transformers_modules/Baichuan2-7B-Chat/modeling_baichuan.py", line 62, in _make_causal_mask
+    mask = torch.full((tgt_len, tgt_len), torch.tensor(torch.finfo(dtype).min, device=device), device=device)
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
