@@ -1,8 +1,8 @@
-CUDA_VISIBLE_DEVICES=0 python /root/LinChance-Fine-tuning-System/LLaMA-Factory/src/train_bash.py \
+CUDA_VISIBLE_DEVICES=0 python LLaMA-Factory/src/train_bash.py \
     --stage sft \
-    --model_name_or_path /root/autodl-tmp/ZhipuAI/chatglm3-6b \
+    --model_name_or_path /root/autodl-tmp/models/ZhipuAI/chatglm3-6b \
     --do_train \
-    --dataset_dir /root/LinChance-Fine-tuning-System/LLaMA-Factory/data \
+    --dataset_dir LLaMA-Factory/data \
     --dataset lima \
     --template chatglm3 \
     --finetuning_type lora \
@@ -15,7 +15,7 @@ CUDA_VISIBLE_DEVICES=0 python /root/LinChance-Fine-tuning-System/LLaMA-Factory/s
     --logging_steps 50 \
     --save_steps 200 \
     --overwrite_output_dir \
-    --output_dir /root/LinChance-Fine-tuning-System/output_models/output_chatglm3  \
+    --output_dir output_models/output_chatglm3  \
     --learning_rate 5e-05 \
     --num_train_epochs 3 \
     --plot_loss \

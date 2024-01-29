@@ -1,10 +1,10 @@
-CUDA_VISIBLE_DEVICES=0 python /root/LinChance-Fine-tuning-System/LLaMA-Factory/src/train_bash.py \
+CUDA_VISIBLE_DEVICES=0 python /root/LLaMA-Factory/src/train_bash.py \
     --stage sft \
     --model_name_or_path /root/autodl-tmp/models/baichuan-inc/Baichuan2-7B-Chat \
     --do_train \
-    --dataset_dir /root/LinChance-Fine-tuning-System/LLaMA-Factory/data \
+    --dataset_dir LLaMA-Factory/data \
     --dataset lima \
-    --template baichuan \
+    --template baichuan2 \
     --finetuning_type lora \
     --lora_target W_pack \
     --overwrite_cache \
@@ -15,11 +15,10 @@ CUDA_VISIBLE_DEVICES=0 python /root/LinChance-Fine-tuning-System/LLaMA-Factory/s
     --logging_steps 50 \
     --save_steps 200 \
     --overwrite_output_dir \
-    --output_dir /root/LinChance-Fine-tuning-System/output_models/output_baichuan2 \
+    --output_dir output_models/output_baichuan2  \
     --learning_rate 5e-05 \
-    --num_train_epochs 1.0 \
+    --num_train_epochs 3 \
     --plot_loss \
-    --lora_rank 8 \
+    --lora_rank 10 \
     --lora_alpha 20 \
     --fp16
-    

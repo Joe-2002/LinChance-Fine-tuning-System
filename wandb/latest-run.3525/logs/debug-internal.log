@@ -1,0 +1,672 @@
+2024-01-25 21:59:41,369 INFO    StreamThr :3593 [internal.py:wandb_internal():86] W&B internal server running at pid: 3593, started at: 2024-01-25 21:59:41.367726
+2024-01-25 21:59:41,373 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status
+2024-01-25 21:59:41,378 INFO    WriterThread:3593 [datastore.py:open_for_write():87] open: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/run-qtl8zvlo.wandb
+2024-01-25 21:59:41,380 DEBUG   SenderThread:3593 [sender.py:send():382] send: header
+2024-01-25 21:59:41,380 DEBUG   SenderThread:3593 [sender.py:send():382] send: run
+2024-01-25 21:59:43,283 INFO    SenderThread:3593 [dir_watcher.py:__init__():211] watching files in: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files
+2024-01-25 21:59:43,283 INFO    SenderThread:3593 [sender.py:_start_run_threads():1136] run started: qtl8zvlo with start time 1706191181.366953
+2024-01-25 21:59:43,304 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: check_version
+2024-01-25 21:59:43,305 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: check_version
+2024-01-25 21:59:46,348 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: run_start
+2024-01-25 21:59:46,385 DEBUG   HandlerThread:3593 [system_info.py:__init__():27] System info init
+2024-01-25 21:59:46,386 DEBUG   HandlerThread:3593 [system_info.py:__init__():42] System info init done
+2024-01-25 21:59:46,386 INFO    HandlerThread:3593 [system_monitor.py:start():194] Starting system monitor
+2024-01-25 21:59:46,386 INFO    SystemMonitor:3593 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-25 21:59:46,387 INFO    HandlerThread:3593 [system_monitor.py:probe():214] Collecting system info
+2024-01-25 21:59:46,388 INFO    SystemMonitor:3593 [interfaces.py:start():190] Started cpu monitoring
+2024-01-25 21:59:46,389 INFO    SystemMonitor:3593 [interfaces.py:start():190] Started disk monitoring
+2024-01-25 21:59:46,392 INFO    SystemMonitor:3593 [interfaces.py:start():190] Started gpu monitoring
+2024-01-25 21:59:46,393 INFO    SystemMonitor:3593 [interfaces.py:start():190] Started memory monitoring
+2024-01-25 21:59:46,395 INFO    SystemMonitor:3593 [interfaces.py:start():190] Started network monitoring
+2024-01-25 21:59:46,488 DEBUG   HandlerThread:3593 [system_info.py:probe():151] Probing system
+2024-01-25 21:59:46,499 DEBUG   HandlerThread:3593 [gitlib.py:_init_repo():56] git repository is invalid
+2024-01-25 21:59:46,499 DEBUG   HandlerThread:3593 [system_info.py:probe():199] Probing system done
+2024-01-25 21:59:46,499 DEBUG   HandlerThread:3593 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-91-generic-x86_64-with-glibc2.17', 'python': '3.8.10', 'heartbeatAt': '2024-01-25T13:59:46.488911', 'startedAt': '2024-01-25T13:59:41.354257', 'docker': None, 'cuda': None, 'args': ('--stage', 'sft', '--model_name_or_path', '/root/autodl-tmp/models/baichuan-inc/Baichuan2-7B-Chat', '--do_train', '--dataset_dir', '/root/LinChance-Fine-tuning-System/LLaMA-Factory/data', '--dataset', 'lima', '--template', 'baichuan', '--finetuning_type', 'lora', '--lora_target', 'W_pack', '--overwrite_cache', '--per_device_train_batch_size', '2', '--gradient_accumulation_steps', '2', '--eval_steps', '500', '--lr_scheduler_type', 'cosine', '--logging_steps', '50', '--save_steps', '200', '--overwrite_output_dir', '--output_dir', '/root/LinChance-Fine-tuning-System/output_models/output_baichuan2', '--learning_rate', '5e-05', '--num_train_epochs', '1.0', '--plot_loss', '--lora_rank', '8', '--lora_alpha', '20', '--fp16'), 'state': 'running', 'program': '/root/LinChance-Fine-tuning-System/LLaMA-Factory/src/train_bash.py', 'codePathLocal': 'LLaMA-Factory/src/train_bash.py', 'codePath': 'LLaMA-Factory/src/train_bash.py', 'host': 'autodl-container-dc1940be2f-628ca1ce', 'username': 'root', 'executable': '/root/miniconda3/bin/python', 'cpu_count': 64, 'cpu_count_logical': 128, 'cpu_freq': {'current': 1976.6909140625003, 'min': 800.0, 'max': 3500.0}, 'cpu_freq_per_core': [{'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.002, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.002, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.002, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 896.638, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 1555.788, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 1445.53, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 879.146, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 1554.38, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2400.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2398.107, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}, {'current': 2000.0, 'min': 800.0, 'max': 3500.0}], 'disk': {'/': {'total': 30.0, 'used': 1.3823966979980469}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}], 'memory': {'total': 1007.5135879516602}}
+2024-01-25 21:59:46,500 INFO    HandlerThread:3593 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-25 21:59:46,500 INFO    HandlerThread:3593 [system_monitor.py:probe():227] Publishing system info
+2024-01-25 21:59:46,500 DEBUG   HandlerThread:3593 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-01-25 21:59:47,164 DEBUG   HandlerThread:3593 [system_info.py:_save_conda():220] Saving conda packages done
+2024-01-25 21:59:47,170 INFO    HandlerThread:3593 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-25 21:59:47,183 DEBUG   SenderThread:3593 [sender.py:send():382] send: files
+2024-01-25 21:59:47,183 INFO    SenderThread:3593 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-01-25 21:59:47,185 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 21:59:47,199 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: python_packages
+2024-01-25 21:59:47,199 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: python_packages
+2024-01-25 21:59:47,200 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 21:59:47,201 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 21:59:47,209 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 21:59:47,290 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_created():271] file/dir created: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/wandb-metadata.json
+2024-01-25 21:59:47,291 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_created():271] file/dir created: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/conda-environment.yaml
+2024-01-25 21:59:47,291 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_created():271] file/dir created: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/requirements.txt
+2024-01-25 21:59:47,953 DEBUG   SenderThread:3593 [sender.py:send():382] send: telemetry
+2024-01-25 21:59:47,954 DEBUG   SenderThread:3593 [sender.py:send():382] send: config
+2024-01-25 21:59:47,956 DEBUG   SenderThread:3593 [sender.py:send():382] send: metric
+2024-01-25 21:59:47,957 DEBUG   SenderThread:3593 [sender.py:send():382] send: telemetry
+2024-01-25 21:59:47,957 DEBUG   SenderThread:3593 [sender.py:send():382] send: metric
+2024-01-25 21:59:47,957 WARNING SenderThread:3593 [sender.py:send_metric():1354] Seen metric with glob (shouldn't happen)
+2024-01-25 21:59:47,957 DEBUG   SenderThread:3593 [sender.py:send():382] send: telemetry
+2024-01-25 21:59:48,213 INFO    wandb-upload_0:3593 [upload_job.py:push():131] Uploaded file /tmp/tmphd737_6jwandb/wjwflz8z-wandb-metadata.json
+2024-01-25 21:59:48,286 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_created():271] file/dir created: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 21:59:50,287 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 21:59:52,288 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 21:59:52,449 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 21:59:54,289 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 21:59:56,291 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 21:59:58,238 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 21:59:58,292 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:00,293 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:02,200 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:00:02,201 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:00:02,208 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:00:02,294 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:03,934 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:00:04,295 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:06,297 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:08,298 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:09,749 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:00:10,299 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:12,300 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:14,302 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:14,967 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:00:17,200 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:00:17,201 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:00:17,208 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:00:17,303 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/config.yaml
+2024-01-25 22:00:18,304 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:20,305 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:21,959 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:00:22,306 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:24,307 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:26,309 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:26,988 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:00:28,310 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:30,311 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:32,200 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:00:32,201 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:00:32,202 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:00:32,312 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:32,521 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:00:34,313 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:36,314 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:37,686 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:00:38,315 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:40,316 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:42,317 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:43,361 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:00:44,318 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:46,319 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:46,395 DEBUG   SystemMonitor:3593 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-25 22:00:46,400 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:00:47,200 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:00:47,202 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:00:47,202 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:00:47,796 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 22:00:47,802 DEBUG   SenderThread:3593 [sender.py:send():382] send: metric
+2024-01-25 22:00:47,802 DEBUG   SenderThread:3593 [sender.py:send():382] send: metric
+2024-01-25 22:00:47,803 DEBUG   SenderThread:3593 [sender.py:send():382] send: metric
+2024-01-25 22:00:47,803 DEBUG   SenderThread:3593 [sender.py:send():382] send: history
+2024-01-25 22:00:47,803 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 22:00:47,804 INFO    SenderThread:3593 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 22:00:48,320 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:48,320 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_created():271] file/dir created: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/wandb-summary.json
+2024-01-25 22:00:48,812 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:00:50,321 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:50,321 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/config.yaml
+2024-01-25 22:00:52,321 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:54,322 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:55,173 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:00:56,323 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:00:58,324 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:00,325 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:00,374 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:01:02,201 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:01:02,202 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:01:02,202 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:01:02,326 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:04,327 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:05,642 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:01:06,327 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:08,328 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:10,329 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:10,707 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:01:12,330 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:14,331 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:16,060 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:01:16,332 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:16,403 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:01:17,201 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:01:17,202 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:01:17,202 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:01:18,333 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:20,334 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:21,161 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:01:22,334 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:24,335 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:26,289 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:01:26,337 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:28,338 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:30,340 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:31,373 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:01:32,202 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:01:32,203 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:01:32,203 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:01:32,345 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:35,347 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:36,771 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:01:37,348 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:39,350 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:41,351 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:42,757 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:01:43,352 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:45,354 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:46,405 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:01:47,202 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:01:47,202 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:01:47,203 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:01:47,355 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:47,632 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 22:01:47,635 DEBUG   SenderThread:3593 [sender.py:send():382] send: history
+2024-01-25 22:01:47,636 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 22:01:47,636 INFO    SenderThread:3593 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 22:01:48,356 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/wandb-summary.json
+2024-01-25 22:01:48,637 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:01:49,357 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:50,357 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:51,358 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:53,359 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:54,371 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:01:55,361 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:57,362 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:59,363 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:01:59,415 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:02:01,365 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:02,202 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:02:02,203 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:02:02,203 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:02:03,366 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:04,459 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:02:05,367 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:07,368 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:09,370 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:09,967 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:02:11,371 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:13,372 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:15,374 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:15,522 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:02:16,409 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:02:17,202 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:02:17,203 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:02:17,203 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:02:17,375 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:19,376 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:20,938 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:02:21,377 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:23,378 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:25,380 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:26,037 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:02:27,381 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:29,382 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:31,111 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:02:31,383 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:32,202 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:02:32,203 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:02:32,203 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:02:33,384 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:35,385 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:36,255 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:02:37,386 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:39,388 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:41,389 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:41,916 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:02:43,390 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:45,392 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:46,310 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 22:02:46,313 DEBUG   SenderThread:3593 [sender.py:send():382] send: history
+2024-01-25 22:02:46,314 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 22:02:46,316 INFO    SenderThread:3593 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 22:02:46,392 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/wandb-summary.json
+2024-01-25 22:02:46,414 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:02:47,150 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:02:47,202 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:02:47,203 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:02:47,203 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:02:47,393 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:48,394 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:49,394 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:51,396 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:52,707 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:02:53,397 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:55,398 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:57,399 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:02:58,534 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:02:59,400 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:01,402 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:02,202 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:03:02,203 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:03:02,204 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:03:03,403 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:03,579 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:03:05,405 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:07,406 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:09,243 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:03:09,407 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:11,409 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:13,410 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:14,246 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:03:15,411 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:16,420 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:03:17,203 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:03:17,204 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:03:17,204 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:03:17,412 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:19,329 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:03:19,413 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:21,415 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:23,415 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:24,338 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:03:25,417 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:27,418 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:29,404 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:03:29,419 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:31,420 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:32,203 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:03:32,203 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:03:32,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:03:33,421 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:34,932 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:03:35,422 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:37,423 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:39,424 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:40,121 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:03:41,426 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:43,427 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:45,428 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:45,450 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:03:46,426 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:03:46,719 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 22:03:46,721 DEBUG   SenderThread:3593 [sender.py:send():382] send: history
+2024-01-25 22:03:46,723 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 22:03:46,725 INFO    SenderThread:3593 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 22:03:47,212 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:03:47,212 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:03:47,213 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:03:47,429 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:47,430 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/wandb-summary.json
+2024-01-25 22:03:48,430 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:49,431 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:50,488 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:03:51,432 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:53,433 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:55,434 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:56,237 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:03:57,435 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:03:59,436 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:01,437 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:02,032 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:04:02,205 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:04:02,205 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:04:02,206 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:04:03,438 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:05,440 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:07,441 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:07,968 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:04:09,442 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:11,443 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:13,444 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:13,794 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:04:15,445 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:16,431 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:04:17,205 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:04:17,206 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:04:17,206 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:04:17,446 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:19,284 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:04:19,448 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:21,449 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:23,450 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:24,550 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:04:25,451 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:27,452 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:29,453 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:30,039 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:04:31,454 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:32,205 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:04:32,206 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:04:32,206 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:04:33,455 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:35,456 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:35,658 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:04:37,458 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:39,459 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:41,312 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:04:41,460 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:43,462 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:45,463 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:46,437 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:04:46,440 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:04:47,205 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:04:47,205 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:04:47,206 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:04:47,464 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:48,020 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 22:04:48,022 DEBUG   SenderThread:3593 [sender.py:send():382] send: history
+2024-01-25 22:04:48,023 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 22:04:48,024 INFO    SenderThread:3593 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 22:04:48,465 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/wandb-summary.json
+2024-01-25 22:04:49,465 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:50,466 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:51,467 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:51,691 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:04:53,468 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:55,469 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:57,425 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:04:57,471 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:04:59,472 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:01,473 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:02,206 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:05:02,206 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:05:02,207 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:05:02,496 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:05:03,475 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:05,476 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:07,477 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:08,065 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:05:09,478 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:11,479 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:13,481 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:13,939 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:05:15,489 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:16,443 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:05:17,206 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:05:17,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:05:17,208 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:05:17,493 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:19,102 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:05:19,492 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:21,493 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:23,495 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:24,957 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:05:25,496 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:27,497 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:29,499 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:29,963 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:05:31,500 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:32,205 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:05:32,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:05:32,207 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:05:33,504 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:35,072 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:05:35,505 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:37,507 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:39,508 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:40,258 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:05:41,509 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:43,511 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:45,512 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:45,691 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:05:46,448 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:05:47,205 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:05:47,206 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:05:47,214 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:05:47,513 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:49,514 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:51,387 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:05:51,515 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:52,832 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 22:05:52,834 DEBUG   SenderThread:3593 [sender.py:send():382] send: history
+2024-01-25 22:05:52,835 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 22:05:52,837 INFO    SenderThread:3593 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 22:05:53,517 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:53,518 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/wandb-summary.json
+2024-01-25 22:05:54,518 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:55,518 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:56,763 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:05:57,520 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:05:59,521 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:01,522 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:01,867 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:06:02,206 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:06:02,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:06:02,208 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:06:03,524 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:05,525 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:07,190 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:06:07,526 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:09,527 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:11,529 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:12,549 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:06:13,530 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:15,531 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:16,456 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:06:17,206 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:06:17,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:06:17,208 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:06:17,533 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:18,496 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:06:19,534 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:21,535 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:23,536 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:24,409 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:06:25,538 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:27,539 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:29,540 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:29,591 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:06:31,541 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:32,206 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:06:32,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:06:32,208 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:06:33,543 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:34,832 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:06:35,544 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:37,545 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:39,547 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:40,348 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:06:41,548 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:43,549 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:45,550 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:45,649 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:06:46,462 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:06:47,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:06:47,208 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:06:47,208 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:06:47,551 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:49,553 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:51,072 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:06:51,554 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:53,555 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:55,556 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:55,711 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 22:06:55,714 DEBUG   SenderThread:3593 [sender.py:send():382] send: history
+2024-01-25 22:06:55,715 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 22:06:55,717 INFO    SenderThread:3593 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 22:06:56,556 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:56,557 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/wandb-summary.json
+2024-01-25 22:06:56,718 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:06:57,557 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:06:59,558 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:01,559 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:02,206 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:07:02,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:07:02,208 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:07:02,562 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:07:03,560 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:05,561 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:07,562 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:08,273 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:07:09,563 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:11,565 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:13,502 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:07:13,566 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:15,567 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:16,465 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:07:17,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:07:17,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:07:17,208 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:07:17,568 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:18,599 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:07:19,569 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:21,571 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:23,572 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:24,382 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:07:25,573 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:27,574 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:29,576 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:29,630 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:07:31,577 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:32,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:07:32,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:07:32,208 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:07:33,578 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:35,009 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:07:35,580 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:37,581 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:39,582 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:40,194 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:07:41,584 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:43,585 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:45,586 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:45,986 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:07:46,467 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:07:47,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:07:47,208 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:07:47,209 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:07:47,588 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:49,589 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:51,331 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:07:51,590 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:53,591 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:55,593 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:56,410 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:07:56,410 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 22:07:56,412 DEBUG   SenderThread:3593 [sender.py:send():382] send: history
+2024-01-25 22:07:56,414 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 22:07:56,416 INFO    SenderThread:3593 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 22:07:56,593 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/wandb-summary.json
+2024-01-25 22:07:57,594 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:58,595 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:07:59,595 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:01,596 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:01,985 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:08:02,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:08:02,208 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:08:02,209 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:08:03,597 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:05,599 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:07,238 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:08:07,600 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:09,601 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:11,602 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:12,376 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:08:13,603 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:15,604 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:16,473 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:08:17,207 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:08:17,208 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:08:17,213 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:08:17,558 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:08:17,606 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:19,607 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:21,609 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:22,851 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:08:23,610 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:25,611 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:27,612 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:27,946 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:08:29,614 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:31,615 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:32,208 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:08:32,209 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:08:32,215 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:08:33,485 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:08:33,618 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:36,620 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:38,621 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:38,734 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:08:40,622 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:42,624 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:44,613 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:08:44,625 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:46,478 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:08:46,626 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:47,208 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:08:47,209 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:08:47,210 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:08:48,628 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:50,020 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:08:50,629 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:52,630 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:54,630 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:55,142 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:08:56,632 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:57,951 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 22:08:57,954 DEBUG   SenderThread:3593 [sender.py:send():382] send: history
+2024-01-25 22:08:57,956 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 22:08:57,958 INFO    SenderThread:3593 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 22:08:58,633 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:08:58,633 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/wandb-summary.json
+2024-01-25 22:09:00,634 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:00,887 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:09:02,208 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:09:02,209 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:09:02,210 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:09:02,635 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:04,636 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:05,986 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:09:06,637 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:08,638 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:10,639 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:11,739 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:09:12,640 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:14,641 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:16,485 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:09:16,642 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:17,208 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:09:17,209 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:09:17,209 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:09:17,490 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:09:18,644 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:20,645 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:22,646 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:22,845 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:09:24,647 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:26,648 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:28,146 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:09:28,649 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:30,650 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:32,208 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:09:32,209 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:09:32,210 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:09:32,651 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:33,571 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:09:34,653 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:36,654 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:38,655 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:38,719 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:09:40,657 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:42,658 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:44,190 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:09:44,659 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:46,490 DEBUG   SenderThread:3593 [sender.py:send():382] send: stats
+2024-01-25 22:09:46,661 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:47,209 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:09:47,209 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:09:47,210 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:09:49,695 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:09:50,663 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:52,664 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:54,665 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:55,271 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:09:56,666 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:58,667 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:09:59,969 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 22:09:59,971 DEBUG   SenderThread:3593 [sender.py:send():382] send: history
+2024-01-25 22:09:59,972 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 22:09:59,975 INFO    SenderThread:3593 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 22:10:00,668 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:10:00,669 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/wandb-summary.json
+2024-01-25 22:10:00,976 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 22:10:02,209 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 22:10:02,209 DEBUG   HandlerThread:3593 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 22:10:02,210 DEBUG   SenderThread:3593 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 22:10:02,669 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log
+2024-01-25 22:10:04,670 INFO    Thread-12 :3593 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/LinChance-Fine-tuning-System/wandb/run-20240125_215941-qtl8zvlo/files/output.log

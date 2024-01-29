@@ -1,0 +1,114 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  5%|█████▋                                                                                                                     | 50/1089 [01:28<30:03,  1.74s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  9%|███████████▏                                                                                                               | 99/1089 [02:56<29:25,  1.78s/it]
+
+
+
+
+
+
+
+
+
+ 10%|████████████▏                                                                                                             | 109/1089 [03:14<30:31,  1.87s/it]Traceback (most recent call last):
+  File "/root/LinChance-Fine-tuning-System/LLaMA-Factory/src/train_bash.py", line 14, in <module>
+    main()
+  File "/root/LinChance-Fine-tuning-System/LLaMA-Factory/src/train_bash.py", line 5, in main
+    run_exp()
+  File "/root/LinChance-Fine-tuning-System/LLaMA-Factory/src/llmtuner/train/tuner.py", line 29, in run_exp
+    run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
+  File "/root/LinChance-Fine-tuning-System/LLaMA-Factory/src/llmtuner/train/sft/workflow.py", line 71, in run_sft
+    train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
+  File "/root/miniconda3/lib/python3.8/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/root/miniconda3/lib/python3.8/site-packages/transformers/trainer.py", line 1869, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/root/miniconda3/lib/python3.8/site-packages/transformers/trainer.py", line 2777, in training_step
+    self.accelerator.backward(loss)
+  File "/root/miniconda3/lib/python3.8/site-packages/accelerate/accelerator.py", line 1962, in backward
+    self.scaler.scale(loss).backward(**kwargs)
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/autograd/__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
