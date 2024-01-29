@@ -28,7 +28,7 @@ LinChance-Fine-tuning-System
   - [目录](#目录)
     - [项目介绍](#项目介绍)
     - [环境准备](#环境准备)
-    - [**安装步骤**](#安装步骤)
+    - [安装步骤](#安装步骤)
       - [1. 克隆仓库：](#1-克隆仓库)
       - [2. 执行下面的命令：](#2-执行下面的命令)
       - [3. 运行开启命令：](#3-运行开启命令)
@@ -134,19 +134,19 @@ python -m streamlit run main.py
 
 #### 点击一键下载模型  
 
-![Alt text](images/model_download.png)  
+![Alt text](images/model_download.PNG)  
 
 #### 上传或者选择已有数据集  
 
-![Alt text](images/datasets.png)  
+![Alt text](images/datasets.PNG)  
 
 #### 使用默认脚本参数开始训练  
 
-![Alt text](images/finetuning.png)
+![Alt text](images/finetuning.PNG)
 
 #### 自定义并保存微调脚本参数查看并开始训练
 
-![Alt text](images/finetuning_save.png)
+![Alt text](images/finetuning_save.PNG)
 
 #### 微调参数信息中英文切换
 
@@ -162,7 +162,7 @@ python -m streamlit run main.py
 
 #### 与训练后模型对话测试  
 
-![Alt text](images/chat.png)
+![Alt text](images/chat.PNG)
 
 ### 已支持模型  
 
