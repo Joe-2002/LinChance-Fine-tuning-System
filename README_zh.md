@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/Joe-2002/LinChance-Fine-tuning-System/">
-    <img src="images/home.PNG" alt="Home">
+    <img src="images/home.png" alt="Home">
   </a>
   <p align="center">
     <br />
