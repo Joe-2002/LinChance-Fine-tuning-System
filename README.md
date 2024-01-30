@@ -1,174 +1,207 @@
 
-
 # LinChance-Fine-tuning-System
-
-LinChance-Fine-tuning-System  
-
 
 <!-- PROJECT LOGO -->
 <br />
 
 <p align="center">
   <a href="https://github.com/Joe-2002/LinChance-Fine-tuning-System/">
-    <img src="images/home.png" alt="Home">
+    <img src="images/home.PNG" alt="Home">
   </a>
   <p align="center">
     <br />
-    <a href="https://github.com/Joe-2002/LinChance-Fine-tuning-System">查看Demo</a>
+    <a href="https://github.com/Joe-2002/LinChance-Fine-tuning-System">View Demo</a>
     ·
-    <a href="https://github.com/Joe-2002/LinChance-Fine-tuning-System/issues">报告Bug</a>
+    <a href="https://github.com/Joe-2002/LinChance-Fine-tuning-System/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Joe-2002/LinChance-Fine-tuning-System/issues">提出新特性</a>
+    <a href="https://github.com/Joe-2002/LinChance-Fine-tuning-System/issues">Request Feature</a>
   </p>
 </p>
 
-## 目录
+## Content
 
 - [LinChance-Fine-tuning-System](#linchance-fine-tuning-system)
-  - [目录](#目录)
-    - [项目介绍](#项目介绍)
-    - [环境准备](#环境准备)
-    - [安装步骤](#安装步骤)
-      - [1. 克隆仓库：](#1-克隆仓库)
-      - [2. 执行下面的命令：](#2-执行下面的命令)
-      - [3. 运行开启命令：](#3-运行开启命令)
-      - [4. ngrok 内网穿透](#4-ngrok-内网穿透)
-      - [4. wandb 微调输出信息联网绘制图表](#4-wandb-微调输出信息联网绘制图表)
-    - [Web UI 页面操作](#web-ui-页面操作)
-      - [点击一键下载模型](#点击一键下载模型)
-      - [上传或者选择已有数据集](#上传或者选择已有数据集)
-      - [使用默认脚本参数开始训练](#使用默认脚本参数开始训练)
-      - [自定义并保存微调脚本参数查看并开始训练](#自定义并保存微调脚本参数查看并开始训练)
-      - [微调参数信息中英文切换](#微调参数信息中英文切换)
-      - [超参数自动优化并显示](#超参数自动优化并显示)
-      - [微调输出信息图表格](#微调输出信息图表格)
-      - [与训练后模型对话测试](#与训练后模型对话测试)
-    - [已支持模型](#已支持模型)
-    - [贡献者](#贡献者)
+  - [Content](#content)
+    - [Project Introduction](#project-introduction)
+    - [Environment Setup](#environment-setup)
+    - [**Installation Steps**](#installation-steps)
+      - [1. Clone the Repository:](#1-clone-the-repository)
+      - [2. Execute the following commands:](#2-execute-the-following-commands)
+      - [3. Run the startup command:](#3-run-the-startup-command)
+      - [4. ngrok Intranet Penetration](#4-ngrok-intranet-penetration)
+      - [4. WandB Fine-tuning Output Information Network Charting](#4-wandb-fine-tuning-output-information-network-charting)
+      - [5. Dataset Format](#5-dataset-format)
+    - [Web UI Page Operations](#web-ui-page-operations)
+      - [Click to Download Models](#click-to-download-models)
+      - [Upload or Choose Existing Datasets](#upload-or-choose-existing-datasets)
+      - [Start Fine-tuning with Default Script Parameters](#start-fine-tuning-with-default-script-parameters)
+      - [Switch Between Chinese and English in Fine-tuning Parameter Information](#switch-between-chinese-and-english-in-fine-tuning-parameter-information)
+      - [Automatically Optimize and Display Hyperparameters](#automatically-optimize-and-display-hyperparameters)
+      - [Customize and Save Fine-tuning Script Parameters for Viewing and Starting Fine-tuning](#customize-and-save-fine-tuning-script-parameters-for-viewing-and-starting-fine-tuning)
+      - [Resume Fine-tuning Progress](#resume-fine-tuning-progress)
+      - [Display Loss Graph After Fine-tuning Completion](#display-loss-graph-after-fine-tuning-completion)
+      - [Test the Trained Model with Dialogue](#test-the-trained-model-with-dialogue)
+      - [Forceful Exit and Restart Button](#forceful-exit-and-restart-button)
+    - [Supported Models](#supported-models)
+  - [Contributors](#contributors)
 
-### 项目介绍  
-- 在 Autodl 3090 24G 实验环境下，采用 Streamlit 结合 LLaMA-Factory 打造的模型微调 Web UI ——LinChance Fine-tuning System。
-- 使用 ngrok 内网穿透实现 Autodl 服务互联网访问。
-- 使用 Streamlit 组件和方法实现简约大方的微调系统界面，使用 modelscope 方法实现模型快速下载，支持用户自定义微调参数，选择已有数据集或者上传私有数据集进行私有化便捷使用 Lora 方法微调大模型，利于新手友好操作。
-- 使用 Linux 子进程方法实现多 Python 进程运行微调脚本和 Streamlit Web UI。  
+### Project Introduction  
 
-### 环境准备
+- LinChance Fine-tuning System is a model fine-tuning web UI created using Streamlit combined with LLaMA-Factory in the `Autodl 3090 24G` experimental environment.
+- It utilizes ngrok for intranet penetration to enable internet access to Autodl services.
+- The system features a simple and elegant fine-tuning interface implemented using Streamlit components and methods. It incorporates the modelscope method for quick model downloads, allowing users to customize fine-tuning parameters. Users can choose existing datasets or upload private datasets for convenient and private fine-tuning using the Lora method. This design aims to provide a user-friendly experience, especially for beginners.
+- The system employs Linux subprocess methods to run multiple Python processes for fine-tuning scripts and Streamlit Web UI. 
 
-在 [autodl](https://www.autodl.com/) 平台中租一个 3090 等 24G 显存的显卡机器，如下图所示镜像选择 `PyTorch`-->`2.0.0`-->`3.8(ubuntu20.04)`-->`11.8`
+### Environment Setup
+
+Rent a GPU machine with 24GB VRAM, such as a 3090 card, on the [autodl](https://www.autodl.com/) platform. Choose the following image: `PyTorch` --> `2.0.0` --> `3.8(ubuntu20.04)` --> `11.8`, as shown in the image below.
 
 ![Alt text](images/autodl.png)
 
-接下来打开刚刚租用服务器的 `JupyterLab`，并且打开其中的终端开始环境配置、模型下载和运行 `demo`。
+Next, open the `JupyterLab` on the rented server and open the terminal to start environment configuration, model downloads, and run the `demo`.
 
-pip 换源和安装依赖包
+pip source replacement and dependency installation:
 
 ```shell
-# 升级pip
+# Upgrade pip
 python -m pip install --upgrade pip
-# 更换 pypi 源加速库的安装
+# Change the pypi source to speed up library installation
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 pip install modelscope
 ```  
 
-### **安装步骤**
+### **Installation Steps**
 
-#### 1. 克隆仓库：  
+#### 1. Clone the Repository:
 
 ```sh
 git clone https://github.com/Joe-2002/LinChance-Fine-tuning-System.git  
 ```  
 
-#### 2. 执行下面的命令：
+#### 2. Execute the following commands:
 
 ```shell
 cd /root/LinChance Fine-tuning System
 pip install -r requirements.txt
 ```  
 
-#### 3. 运行开启命令：
+#### 3. Run the startup command:
 
 ```shell
 python -m streamlit run main.py
 ```
 
-#### 4. ngrok 内网穿透  
-  
-1. 首先在 `Ngrok` 官网上查看安装命令，我们以 `Linux` 系统为例，有多种方式可以安装，包括压缩包下载、`APT` 安装、`Snap` 安装，这里我们使用 `APT` 安装，执行以下命令：  
+#### 4. ngrok Intranet Penetration
+
+1. First, check the installation command on the `Ngrok` official website. We'll use the example of a `Linux` system for installation, which can be done through various methods including downloading the compressed package, `APT` installation, and `Snap` installation. Here, we use `APT` installation, execute the following command:
 
     ```shell
     curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install ngrok
     ```
 
-2. `Ngrok` 安装完成后，需要到它的官网上注册一个账号，然后在 `Your Authtoken` 菜单中获取 `Authtoken`，这个 `Authtoken` 用于验证用户身份，可以通过以下命令将 `Authtoken` 设置到本地。
-  
-    ```shell
-    ngrok config add-authtoken your-ngrok-authtoken # 这里替换成你的 Authtoken  
-    ```  
+2. After `Ngrok` is installed, register an account on its official website. Then, obtain the `Authtoken` in the `Your Authtoken` menu. This `Authtoken` is used for user identity verification. Set the `Authtoken` locally with the following command:
 
-3. 然后执行以下命令，通过 `Ngrok` 代理本地的  `Streamlit` 服务。
-  
     ```shell
-    ngrok http 8501 # streamlit 默认端口为 8501
-    ```  
+    ngrok config add-authtoken your-ngrok-authtoken # Replace this with your Authtoken
+    ```
 
-4. 访问下图链接即可打开 `Web UI` 页面：  
+3. Next, execute the following command to proxy the local `Streamlit` service through `Ngrok`.
+
+    ```shell
+    ngrok http 8501 # streamlit default port is 8501
+    ```
+
+4. Access the link shown in the image below to open the `Web UI` page:
 
     ![Alt text](images/ngrok_link.png)
 
-#### 4. wandb 微调输出信息联网绘制图表  
+#### 4. WandB Fine-tuning Output Information Network Charting
 
-1. 安装 使用以下命令安装 WandB：
+1. Install WandB using the following command:
 
     ```bash
     pip install wandb
     ```
 
-2. 然后在wandb官网注册一个账号，然后获取该账号的私钥。然后在命令行执行：
+2. Once the installation is complete, you can access the WandB Quickstart guide at the following link: [WandB Quickstart](https://wandb.ai/quickstart)
 
-      ```bash
-      wandb login
-      ```  
+3. Register an account on the WandB official website and obtain the API key for that account. Then, execute the following command in the terminal:
 
-### Web UI 页面操作  
+    ```bash
+    wandb login
+    ```
 
-#### 点击一键下载模型  
+#### 5. Dataset Format
+
+  *By default, the lima dataset is selected. After uploading a dataset, change its name to lima (since this repository is developed based on LlaMa Factory, the modified name can be directly recognized and used).*
+
+```json
+[
+  {
+    "instruction": "",
+    "input": "",
+    "output": "",
+    "history": ""
+  },
+  {
+    "instruction": "",
+    "input": "",
+    "output": "",
+    "history": ""
+  },
+]
+```  
+
+### Web UI Page Operations  
+
+#### Click to Download Models  
 
 ![Alt text](images/model_download.PNG)  
 
-#### 上传或者选择已有数据集  
+#### Upload or Choose Existing Datasets  
 
 ![Alt text](images/datasets.PNG)  
 
-#### 使用默认脚本参数开始训练  
+#### Start Fine-tuning with Default Script Parameters  
 
 ![Alt text](images/finetuning.PNG)
 
-#### 自定义并保存微调脚本参数查看并开始训练
-
-![Alt text](images/finetuning_save.PNG)
-
-#### 微调参数信息中英文切换
+#### Switch Between Chinese and English in Fine-tuning Parameter Information
 
 ![Alt text](images/chinese&english.png)  
 
-#### 超参数自动优化并显示
+#### Automatically Optimize and Display Hyperparameters
 
-![Alt text](images/optimize.png)  
+![Alt text](images/optimize.png)
 
-#### 微调输出信息图表格  
+#### Customize and Save Fine-tuning Script Parameters for Viewing and Starting Fine-tuning
+
+![Alt text](images/finetuning_save.PNG)
+
+#### Resume Fine-tuning Progress
+
+![Alt text](images/Recollecting.png)
+
+#### Display Loss Graph After Fine-tuning Completion
 
 ![Alt text](images/log.png)  
 
-#### 与训练后模型对话测试  
+#### Test the Trained Model with Dialogue  
 
 ![Alt text](images/chat.PNG)
 
-### 已支持模型  
+#### Forceful Exit and Restart Button  
+
+> Before usage, please read the warning message. Use with caution!!!
+
+![Alt text](images/kill_all_processes.png)
+
+### Supported Models  
 
 - [ChatGLM3](https://github.com/THUDM/ChatGLM3.git)
   - [x] ChatGLM3-6B-chat
-- [Baichuan 百川智能](https://www.baichuan-ai.com/home)
+- [Baichuan2](https://www.baichuan-ai.com/home)
   - [x] Baichuan2-7B-chat
   - [x] Baichuan2-13B-chat
 - [Mistral](https://mistral.ai/news/announcing-mistral-7b/)
@@ -176,7 +209,18 @@ python -m streamlit run main.py
 - [Llama2](https://ai.meta.com/llama/)
   - [x] LlaMa2-7B-chat  
   
-### 贡献者
-* 李柯辰 - 南京航空航天大学
-* 陈嘉诺 - 广州大学
-* 陈柏安 - 似然实验室
+## Contributors
+
+[**Kechen Li**](https://github.com/Joe-2002)
+
+Contact Email: <a href="mailto:likechen@linchance.com">likechen@linchance.com</a>
+
+Affiliation: <a href="http://maxlikelihood.cn/">Likelihood Lab</a>
+
+<div align="center">
+  <img src="https://github.com/Joe-2002.png?s=40" alt="Li Kechen" width="150" height="150">
+  <br>
+  <a href="https://github.com/Joe-2002"><b>Kechen Li</b></a>
+  <p></p>
+</div>
+

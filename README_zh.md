@@ -1,16 +1,12 @@
 
-
 # LinChance-Fine-tuning-System
-
-LinChance-Fine-tuning-System  
-
 
 <!-- PROJECT LOGO -->
 <br />
 
 <p align="center">
   <a href="https://github.com/Joe-2002/LinChance-Fine-tuning-System/">
-    <img src="images/home.png" alt="Home">
+    <img src="images/home.PNG" alt="Home">
   </a>
   <p align="center">
     <br />
@@ -33,21 +29,26 @@ LinChance-Fine-tuning-System
       - [2. 执行下面的命令：](#2-执行下面的命令)
       - [3. 运行开启命令：](#3-运行开启命令)
       - [4. ngrok 内网穿透](#4-ngrok-内网穿透)
-      - [4. wandb 微调输出信息联网绘制图表](#4-wandb-微调输出信息联网绘制图表)
+      - [4. WandB 微调输出信息联网绘制图表](#4-wandb-微调输出信息联网绘制图表)
+      - [5. 数据集格式](#5-数据集格式)
     - [Web UI 页面操作](#web-ui-页面操作)
       - [点击一键下载模型](#点击一键下载模型)
       - [上传或者选择已有数据集](#上传或者选择已有数据集)
-      - [使用默认脚本参数开始训练](#使用默认脚本参数开始训练)
-      - [自定义并保存微调脚本参数查看并开始训练](#自定义并保存微调脚本参数查看并开始训练)
+      - [使用默认脚本参数开始微调](#使用默认脚本参数开始微调)
       - [微调参数信息中英文切换](#微调参数信息中英文切换)
       - [超参数自动优化并显示](#超参数自动优化并显示)
-      - [微调输出信息图表格](#微调输出信息图表格)
+      - [自定义并保存微调脚本参数查看并开始微调](#自定义并保存微调脚本参数查看并开始微调)
+      - [微调进度重拾](#微调进度重拾)
+      - [微调完成之后 loss 图显示](#微调完成之后-loss-图显示)
       - [与训练后模型对话测试](#与训练后模型对话测试)
+      - [强制退出重启按钮](#强制退出重启按钮)
     - [已支持模型](#已支持模型)
     - [贡献者](#贡献者)
+    - [版权说明](#版权说明)
 
 ### 项目介绍  
-- 在 Autodl 3090 24G 实验环境下，采用 Streamlit 结合 LLaMA-Factory 打造的模型微调 Web UI ——LinChance Fine-tuning System。
+
+- 在 `Autodl 3090 24G` 实验环境下，采用 Streamlit 结合 LLaMA-Factory 打造的模型微调 Web UI ——LinChance Fine-tuning System。
 - 使用 ngrok 内网穿透实现 Autodl 服务互联网访问。
 - 使用 Streamlit 组件和方法实现简约大方的微调系统界面，使用 modelscope 方法实现模型快速下载，支持用户自定义微调参数，选择已有数据集或者上传私有数据集进行私有化便捷使用 Lora 方法微调大模型，利于新手友好操作。
 - 使用 Linux 子进程方法实现多 Python 进程运行微调脚本和 Streamlit Web UI。  
@@ -116,7 +117,7 @@ python -m streamlit run main.py
 
     ![Alt text](images/ngrok_link.png)
 
-#### 4. wandb 微调输出信息联网绘制图表  
+#### 4. WandB 微调输出信息联网绘制图表  
 
 1. 安装 使用以下命令安装 WandB：
 
@@ -124,29 +125,48 @@ python -m streamlit run main.py
     pip install wandb
     ```
 
-2. 然后在wandb官网注册一个账号，然后获取该账号的私钥。然后在命令行执行：
+2. 安装完成后，你可以按照下面的链接访问 WandB 的快速入门指南： [WandB Quickstart](https://wandb.ai/quickstart)
+
+3. 然后在 WandB 官网注册一个账号，然后获取该账号的私钥。然后在命令行执行：
 
       ```bash
       wandb login
       ```  
 
+#### 5. 数据集格式  
+
+*默认选择 lima 数据集，上传数据集后将名称改为 lima 即可（由于本仓库基于 LlaMa Factory 开发，修改后可以直接被识别使用）*
+
+```json
+[
+  {
+    "instruction": "",
+    "input": "",
+    "output": "",
+    "history": ""
+  },
+  {
+    "instruction": "",
+    "input": "",
+    "output": "",
+    "history": ""
+  },
+]
+```  
+
 ### Web UI 页面操作  
 
 #### 点击一键下载模型  
 
-![Alt text](images/model_download.png)  
+![Alt text](images/model_download.PNG)  
 
 #### 上传或者选择已有数据集  
 
-![Alt text](images/datasets.png)  
+![Alt text](images/datasets.PNG)  
 
-#### 使用默认脚本参数开始训练  
+#### 使用默认脚本参数开始微调  
 
-![Alt text](images/finetuning.png)
-
-#### 自定义并保存微调脚本参数查看并开始训练
-
-![Alt text](images/finetuning_save.png)
+![Alt text](images/finetuning.PNG)
 
 #### 微调参数信息中英文切换
 
@@ -154,21 +174,35 @@ python -m streamlit run main.py
 
 #### 超参数自动优化并显示
 
-![Alt text](images/optimize.png)  
+![Alt text](images/optimize.png)
 
-#### 微调输出信息图表格  
+#### 自定义并保存微调脚本参数查看并开始微调
+
+![Alt text](images/finetuning_save.PNG)
+
+#### 微调进度重拾
+
+![Alt text](images/Recollecting.png)
+
+#### 微调完成之后 loss 图显示
 
 ![Alt text](images/log.png)  
 
 #### 与训练后模型对话测试  
 
-![Alt text](images/chat.png)
+![Alt text](images/chat.PNG)
+
+#### 强制退出重启按钮  
+
+> 使用前请先阅读警告信息，慎重使用！！！  
+
+![Alt text](images/kill_all_processes.png)
 
 ### 已支持模型  
 
 - [ChatGLM3](https://github.com/THUDM/ChatGLM3.git)
   - [x] ChatGLM3-6B-chat
-- [Baichuan 百川智能](https://www.baichuan-ai.com/home)
+- [Baichuan2](https://www.baichuan-ai.com/home)
   - [x] Baichuan2-7B-chat
   - [x] Baichuan2-13B-chat
 - [Mistral](https://mistral.ai/news/announcing-mistral-7b/)
@@ -177,6 +211,18 @@ python -m streamlit run main.py
   - [x] LlaMa2-7B-chat  
   
 ### 贡献者
-* 李柯辰-南京航空航天大学
-* 陈嘉诺-广州大学
-* 
+
+[**李柯辰**](https://github.com/Joe-2002)
+
+联系邮箱 : <a href="mailto:likechen@linchance.com">likechen@linchance.com</a>  
+
+所属机构 : <a href="http://maxlikelihood.cn/">Likelihood Lab</a>
+
+<div align="center">
+  <img src="https://github.com/Joe-2002.png?s=40" alt="李柯辰" width="150" height="150">
+  <br>
+  <a href="https://github.com/Joe-2002"><b>李柯辰</b></a>
+  <p></p>
+</div>
+
+### 版权说明
