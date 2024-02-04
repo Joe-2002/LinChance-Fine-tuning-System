@@ -1,8 +1,9 @@
-CUDA_VISIBLE_DEVICES=0 python /root/LLaMA-Factory/src/train_bash.py \
+
+CUDA_VISIBLE_DEVICES=0 python ./LLaMA-Factory/src/train_bash.py \
     --stage sft \
     --model_name_or_path /root/autodl-tmp/models/baichuan-inc/Baichuan2-7B-Chat \
     --do_train \
-    --dataset_dir LLaMA-Factory/data \
+    --dataset_dir ./LLaMA-Factory/data \
     --dataset lima \
     --template baichuan2 \
     --finetuning_type lora \
@@ -13,9 +14,9 @@ CUDA_VISIBLE_DEVICES=0 python /root/LLaMA-Factory/src/train_bash.py \
     --eval_steps 500 \
     --lr_scheduler_type cosine \
     --logging_steps 50 \
-    --save_steps 200 \
+    --save_steps 500 \
     --overwrite_output_dir \
-    --output_dir output_models/output_baichuan2  \
+    --output_dir ./output_models/output_baichuan2_icu \
     --learning_rate 5e-05 \
     --num_train_epochs 3 \
     --plot_loss \

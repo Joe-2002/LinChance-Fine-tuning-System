@@ -1,5 +1,7 @@
 
-# LinChance-Fine-tuning-System
+# LinChance-Fine-tuning-System  
+
+**Read this in other languages: [English](README.md), [中文](README_zh.md).**
 
 <!-- PROJECT LOGO -->
 <br />
@@ -43,7 +45,9 @@
       - [Test the Trained Model with Dialogue](#test-the-trained-model-with-dialogue)
       - [Forceful Exit and Restart Button](#forceful-exit-and-restart-button)
     - [Supported Models](#supported-models)
+  - [Likelihood Lab](#likelihood-lab)
   - [Contributors](#contributors)
+  - [License](#license)
 
 ### Project Introduction  
 
@@ -209,6 +213,11 @@ python -m streamlit run main.py
 - [Llama2](https://ai.meta.com/llama/)
   - [x] LlaMa2-7B-chat  
   
+## [Likelihood Lab](http://www.maxlikelihood.cn/)
+
+**Likelihood Lab** is a public AI lab initiated by *Maxwell (Mingwen) Liu*, the general manager of *Guangzhou Shining Midas Investment Management Co. Ltd.* and AI leader of *Revenco Conglomerate*. The main research fields are *FinTech, Energy, and Robotics*. Other co-founders of the lab include *Andrew Chen* from MIT, *Elvis Zhang* from Stanford, *Xingyu Fu* from the School of Mathematics SYSU, *Tanli Zuo* from the School of Computer Science SYSU.
+
+
 ## Contributors
 
 [**Kechen Li**](https://github.com/Joe-2002)
@@ -224,3 +233,4 @@ Affiliation: <a href="http://maxlikelihood.cn/">Likelihood Lab</a>
   <p></p>
 </div>
 
+## License

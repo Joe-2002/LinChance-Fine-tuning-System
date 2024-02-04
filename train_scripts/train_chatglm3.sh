@@ -9,7 +9,7 @@ CUDA_VISIBLE_DEVICES=0 python ./LLaMA-Factory/src/train_bash.py \
     --finetuning_type lora \
     --lora_target query_key_value \
     --overwrite_cache \
-    --per_device_train_batch_size 3 \
+    --per_device_train_batch_size 2 \
     --gradient_accumulation_steps 2 \
     --eval_steps 500 \
     --lr_scheduler_type cosine \
@@ -17,7 +17,7 @@ CUDA_VISIBLE_DEVICES=0 python ./LLaMA-Factory/src/train_bash.py \
     --save_steps 500 \
     --overwrite_output_dir \
     --output_dir ./output_models/output_chatglm3 \
-    --learning_rate 2.9936132529617115e-05 \
+    --learning_rate 5e-05 \
     --num_train_epochs 3 \
     --plot_loss \
     --lora_rank 10 \

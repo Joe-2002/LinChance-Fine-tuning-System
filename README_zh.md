@@ -1,5 +1,7 @@
 
-# LinChance-Fine-tuning-System
+# LinChance-Fine-tuning-System  
+
+**其他语言版本: [English](README.md), [中文](README_zh.md).**
 
 <!-- PROJECT LOGO -->
 <br />
@@ -43,8 +45,9 @@
       - [与训练后模型对话测试](#与训练后模型对话测试)
       - [强制退出重启按钮](#强制退出重启按钮)
     - [已支持模型](#已支持模型)
-    - [贡献者](#贡献者)
-    - [版权说明](#版权说明)
+  - [似然实验室](#似然实验室)
+  - [贡献者](#贡献者)
+  - [版权说明](#版权说明)
 
 ### 项目介绍  
 
@@ -209,8 +212,12 @@ python -m streamlit run main.py
   - [x] Mistral-7B-v 0.1
 - [Llama2](https://ai.meta.com/llama/)
   - [x] LlaMa2-7B-chat  
+
+## [似然实验室](http://www.maxlikelihood.cn/)
+
+**似然实验室** 是由 *广州朝旭投资管理有限公司* 总经理 *刘铭文* 发起的公益型人工智能实验室。主要研究领域涵盖人工智能在金融、管理、能源等领域的应用。联合发起人包括麻省理工学院的 *陈柏安*、斯坦福大学的 *张逸晖*、中山大学数学学院的 *付星宇*、中山大学数据科学与计算机学院的 *左谭励*。
   
-### 贡献者
+## 贡献者
 
 [**李柯辰**](https://github.com/Joe-2002)
 
@@ -225,4 +232,4 @@ python -m streamlit run main.py
   <p></p>
 </div>
 
-### 版权说明
+## 版权说明

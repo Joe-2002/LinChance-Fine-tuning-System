@@ -16,14 +16,13 @@ from tqdm import tqdm
 import torch
 import base64
 import zipfile
-import os
 import shutil
 from threading import Thread
 from streamlit_chat import message
 from datetime import datetime
 import optuna
 import psutil
-
+from functions.finetuning import determine_batch_size,read_dataset,determine_learning_rate,determine_num_train_epochs
 
 from functions.start_function import start
 from functions.data_utils import upload_and_display_data, select_and_display_dataset
@@ -33,8 +32,8 @@ st.set_page_config(
     page_title="Home",
     page_icon="👋",
 )
-# 定义全局变量
 
+# global
 model=None
 selected_dataset =None
 options = None
@@ -60,7 +59,7 @@ st.sidebar.markdown('<span style="color: #ff6347; font-size: 1.5em; font-weight:
 
 st.title('Model Fine-tuning System')
 
-# 模型选择
+# models
 model_list =  ("ChatGLM3-6B-Chat", "Mistral-7B-v0.1", "Llama2-7B-Chat", "Baichuan2-7B-Chat","Baichuan2-13B-Chat")
 
 options = st.sidebar.selectbox(
@@ -279,52 +278,9 @@ with st.sidebar.expander(get_text("sidebar_title"), expanded=False):
 
 st.title("Fine-tuning-scripts")
 st.caption(f'Selected Train_scripts: :green[{model_name}]')
-####  超参数优化
-def read_dataset(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        data = json.load(file)
-    return data
-
-def objective(trial, data):
-    total_samples = len(data)
-    avg_text_length = sum(len(entry['input']) for entry in data) / total_samples
-
-    learning_rate = trial.suggest_float('learning_rate', 1e-5, 5e-5, log=True)
-    batch_size = trial.suggest_int('batch_size', 1, 3)
-    num_train_epochs = trial.suggest_int('num_train_epochs', 3, 5)
-
-    print(f"Suggested Learning Rate: {learning_rate}")
-    print(f"Suggested Batch Size: {batch_size}")
-    print(f"Suggested Number of Training Epochs: {num_train_epochs}")
-
-    # In a real scenario, you would run your model training and return an objective value (e.g., validation loss)
-    # For simplicity, we return a dummy objective value here
-    objective_value = (learning_rate * avg_text_length / batch_size) - num_train_epochs
-
-    return objective_value
     
 expander = st.expander("View first five data entries", expanded=False)
-
-if st.sidebar.button("Save and Optimize"):
-    current_time = datetime.now().strftime("%Y%m%d%H%M%S")
-
-    # 设置模型保存路径和数据集路径
-
-    file_path = f"{dataset_dir}/{dataset_name}.json"
-    dataset = read_dataset(file_path)
-
-    # 创建一个Optuna Study对象，并使用优化目标函数优化超参数
-    study = optuna.create_study(direction='minimize')
-    objective_function = lambda trial: objective(trial, dataset)
-    study.optimize(objective_function, n_trials=10)
-
-    # 显示最佳超参数
-    st.write("Best Hyperparameters:")
-    st.write(f"Learning Rate: {study.best_params['learning_rate']}")
-    st.write(f"Batch Size: {study.best_params['batch_size']}")
-    st.write(f"Number of Training Epochs: {study.best_params['num_train_epochs']}")
-
-    # Generate and display the training command with the optimized parameters
+if st.sidebar.button("Save"):
     t_command = f"""
 CUDA_VISIBLE_DEVICES=0 python ./LLaMA-Factory/src/train_bash.py \\
     --stage sft \\
@@ -336,7 +292,7 @@ CUDA_VISIBLE_DEVICES=0 python ./LLaMA-Factory/src/train_bash.py \\
     --finetuning_type lora \\
     --lora_target {lora_target} \\
     --overwrite_cache \\
-    --per_device_train_batch_size {study.best_params['batch_size']} \\
+    --per_device_train_batch_size {per_device_train_batch_size} \\
     --gradient_accumulation_steps {gradient_accumulation_steps} \\
     --eval_steps {eval_steps} \\
     --lr_scheduler_type cosine \\
@@ -344,8 +300,8 @@ CUDA_VISIBLE_DEVICES=0 python ./LLaMA-Factory/src/train_bash.py \\
     --save_steps {save_steps} \\
     --overwrite_output_dir \\
     --output_dir {output_dir} \\
-    --learning_rate {study.best_params['learning_rate']} \\
-    --num_train_epochs {study.best_params['num_train_epochs']} \\
+    --learning_rate {learning_rate} \\
+    --num_train_epochs {num_train_epochs} \\
     --plot_loss \\
     --lora_rank {lora_rank} \\
     --lora_alpha {lora_alpha} \\
@@ -353,22 +309,80 @@ CUDA_VISIBLE_DEVICES=0 python ./LLaMA-Factory/src/train_bash.py \\
 """
     st.write("Generated Training Command:")
     st.code(t_command)
-
     # Write the training command to the specified script file
     with open(train_scripts, "w") as file:
         file.write(t_command)
-
     # Read the content of the script file
     with open(train_scripts, 'r', encoding='utf-8') as script_file:
         script_content = script_file.read()
-
         # Display the script content using an expander with syntax highlighting for shell script (language="sh")
         expander.code(script_content, language="sh")
-
     # Display a success message after successfully saving the parameters
     st.success("Parameters saved successfully!")
 
 
+Optimize_expander = st.expander("View first five data entries", expanded=False)
+if st.sidebar.button("Optimize"):
+    current_time = datetime.now().strftime("%Y%m%d%H%M%S")
+
+    file_path = f"{dataset_dir}/{dataset_name}.json"
+    data = read_dataset(file_path)
+    num_samples = len(data)
+    Optimize_learning_rate = determine_learning_rate(num_samples)
+    st.sidebar.text(f"learning rate: {Optimize_learning_rate}")
+    Optimize_batch_size = determine_batch_size(model_name)
+    st.sidebar.text(f"batch_size for {model_name}: {Optimize_batch_size}")
+    Optimize_num_train_epochs = determine_num_train_epochs(num_samples)
+    st.sidebar.text(f"num_train_epochs: {Optimize_num_train_epochs}")
+    Optimize_on = st.sidebar.button("Optimize and Save")
+    if Optimize_on:
+        try:
+            Optimize_command = f"""
+            CUDA_VISIBLE_DEVICES=0 python ./LLaMA-Factory/src/train_bash.py \\
+                --stage sft \\
+                --model_name_or_path {model_name_or_path} \\
+                --do_train \\
+                --dataset_dir {dataset_dir} \\
+                --dataset {dataset_name} \\
+                --template {template} \\
+                --finetuning_type lora \\
+                --lora_target {lora_target} \\
+                --overwrite_cache \\
+                --per_device_train_batch_size {Optimize_batch_size} \\
+                --gradient_accumulation_steps {gradient_accumulation_steps} \\
+                --eval_steps {eval_steps} \\
+                --lr_scheduler_type cosine \\
+                --logging_steps {logging_steps} \\
+                --save_steps {save_steps} \\
+                --overwrite_output_dir \\
+                --output_dir {output_dir} \\
+                --learning_rate {Optimize_learning_rate} \\
+                --num_train_epochs {Optimize_num_train_epochs} \\
+                --plot_loss \\
+                --lora_rank {lora_rank} \\
+                --lora_alpha {lora_alpha} \\
+                --fp16
+            """
+            st.write("Optimize Parameters Generated Training Command:")
+            st.code(Optimize_command)
+            
+            # Write the training command to the specified script file
+            with open(train_scripts, "w") as file:
+                file.write(Optimize_command)
+            
+            # Read the content of the script file
+            with open(train_scripts, 'r', encoding='utf-8') as script_file:
+                script_content = script_file.read()
+                
+                # Display the script content using an expander with syntax highlighting for shell script (language="sh")
+                Optimize_expander.code(script_content, language="sh")
+            
+            # Display a success message after successfully saving the parameters
+            st.success("Optimize Parameters saved successfully!")
+            
+        except Exception as e:
+            # Display an error message if an exception occurs during the process
+            st.error(f"Error occurred: {str(e)}")
 
 # Create global variables to store the process and output pipe
 process = None
@@ -436,8 +450,10 @@ if os.path.exists(image_path):
     with st.expander("Training Loss Plot"):
         st.image(image_path, caption='Training Loss Plot', use_column_width=True)
 
-if model_name == "Mistral-7B-v0.1":
+log_on = st.button("View")
+if log_on:
     import plotly.express as px
+    import plotly.graph_objects as go
     # 读取JSON Lines文件
     log_file_path = f"output_models/output_{template}/trainer_log.jsonl"
 
@@ -446,18 +462,35 @@ if model_name == "Mistral-7B-v0.1":
         for line in file:
             log_data.append(json.loads(line))
     df = pd.DataFrame(log_data)
+    
     if not df.empty:
-
         with st.expander("Training Log Plot"):
             # 绘制损失曲线和学习率曲线
-            fig = px.line(df, x='current_steps', y=['loss', 'learning_rate'], labels={'value': 'Metric', 'variable': 'Metric Type'}, 
-                          title='Training Loss and Learning Rate Over Steps')
+            fig = go.Figure()
+
+            # 损失曲线
+            fig.add_trace(go.Scatter(x=df['current_steps'], y=df['loss'], mode='lines', name='Loss', line=dict(color='blue')))
+
+            # 添加目标损失值横线
+            target_loss = 1.0  # 根据实际情况调整目标损失值
+            fig.add_shape(go.layout.Shape(type="line", x0=df['current_steps'].min(), x1=df['current_steps'].max(), y0=target_loss, y1=target_loss, line=dict(color="red", width=2, dash="dash")))
+
+            # 学习率曲线
+            fig.add_trace(go.Scatter(x=df['current_steps'], y=df['learning_rate'], mode='lines', name='Learning Rate', line=dict(color='green')))
+
+            # 调整布局和标签
             fig.update_layout(
+                title='Training Loss and Learning Rate Over Steps',
                 xaxis_title="Steps",
                 yaxis_title="Value",
                 legend_title="Metrics",
+                showlegend=True,
+                xaxis=dict(showgrid=True),
+                yaxis=dict(showgrid=True),
             )
+
             st.plotly_chart(fig)
+
 
 #     import matplotlib.pyplot as plt
 
@@ -478,68 +511,76 @@ if model_name == "Mistral-7B-v0.1":
 #             st.pyplot(fig)
 
 
+def kill_python_processes():
+    try:
+        # Run the script to kill Python processes
+        subprocess.run(["sh functions/kill_python.sh"], check=True, shell=True)
+        st.sidebar.success("Python processes terminated successfully.")
+    except subprocess.CalledProcessError as e:
+        st.sidebar.error(f"Error terminating Python processes: {e}")
+
+def display_confirmation_warning():
+    st.sidebar.warning(
+        "⚠️ **WARNING:** This action will terminate all Python processes associated with NVIDIA devices and Streamlit.\n"
+        "After clicking the button, you'll need to restart the Streamlit server by running `streamlit run main.py` in the terminal."
+    )
+
+st.sidebar.title("Terminate All Processes ⚠️")
+display_confirmation_warning()
+button_clicked = st.sidebar.button("Terminate All Processes", type="primary")
+if button_clicked:
+    kill_python_processes()
 
 ### Fine-tuned Merge  
 st.title('Fine-tuned Merge')
 
 st.write("Merge lora to fine-tune model weights")
+
 merge_on = st.button("Merge", type="primary")
 if merge_on:
-    merge_process = None
-    merge_out_r, merge_out_w = None, None
+    # Set up progress bar
+    progress_bar = st.progress(0)
+    
+    # Area to display command line output
+    console_output = st.empty()
 
-    @st.cache_resource
-    def merge_get_pipe():
-        print('Creating merge pipe')
-        global merge_out_r, merge_out_w
-        merge_out_r, merge_out_w = os.pipe()
-        return merge_out_r, merge_out_w
+    # Print script path
+    st.text(f"Running script: {merge_scripts}")
+    
+    # Create StringIO object to capture tqdm output
+    tqdm_output = StringIO()
 
-    @st.cache_resource
-    def merge_get_Popen(merge_out_w,merge_command):
-        print('Creating merge process')
-        global merge_process
-        merge_process = subprocess.Popen(
-            merge_command, 
-            shell=True, 
-            stdout=merge_out_w, 
-            stderr=merge_out_w, 
-            universal_newlines=False
-        )
-        return merge_process
+    # Use subprocess.Popen to start the shell script
+    process = subprocess.Popen(f"sh {merge_scripts}", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, universal_newlines=True)
 
-    def start_fine_tuning(command):
-        global merge_process, merge_out_r, merge_out_w
+    # Wrap stderr stream with tqdm
+    with tqdm(total=None, file=tqdm_output, leave=False, disable=True, dynamic_ncols=True) as t:
+        while True:
+            # Read real-time stderr output
+            line = process.stderr.readline()
+            if not line:
+                break
 
-        if merge_process is None:
-            merge_out_r, merge_out_w = get_pipe()
-            merge_process = get_Popen(merge_out_w, merge_command)
+            # Search for progress information
+            if "Progress:" in line:
+                progress_str = line.split("Progress:")[1].strip()
+                progress = float(progress_str.strip("%")) / 100.0
+                progress_bar.progress(progress)
 
-            st.markdown("## Output")
-            output_container = st.empty()
+            # Update tqdm output
+            t.write(line)
 
-            stop_button = st.button("Turn to the background")
+            # Display command line output
+            console_output.text(line.strip())
 
-            while True:
-                if stop_button:
-                    merge_process.terminate()
-                    st.warning("Process terminated.")
-                    merge_process = None  # Reset process
-                    break
+    # Wait for the command to complete
+    process.wait()
 
-                raw_data = os.read(out_r, 1000)
-                try:
-                    logs = raw_data.decode("utf-8", errors="ignore")
-                    output_container.text(logs)  # Use text instead of write
-                except UnicodeDecodeError as e:
-                    print(f'UnicodeDecodeError: {e}')
-                time.sleep(0.5)
-
-        # Close the write end of the pipe
-        os.close(merge_out_w)
-        os.close(merge_out_r)
-    merge_command = f"sh {merge_scripts}" 
-    start_fine_tuning(merge_command)
+    # Display the entire command line output
+    console_output.code(tqdm_output.getvalue())
+    torch.cuda.empty_cache()
+    # Display success message
+    st.success("Model merge process completed successfully!")   
 
     
 ### Fine-tuned Model Download
@@ -575,70 +616,131 @@ if pack_on:
         mime="application/zip"
     )
 
+from transformers.generation.utils import GenerationConfig
+model_merge_path = "/root/LinChance-Fine-tuning-System/merge/merge_model/merge_baichuan7b"
+@st.cache_resource
+def init_model():
+    model = AutoModelForCausalLM.from_pretrained(
+        model_merge_path,
+        torch_dtype=torch.float16,
+        device_map="auto",
+        trust_remote_code=True
+    )
+    model.generation_config = GenerationConfig.from_pretrained(
+        model_merge_path
+    )
+    tokenizer = AutoTokenizer.from_pretrained(
+        model_merge_path,
+        use_fast=False,
+        trust_remote_code=True
+    )
+    return model, tokenizer
+
+def clear_chat_history():
+    del st.session_state.messages
+
+def init_chat_history():
+    with st.chat_message("assistant", avatar='🤖'):
+        st.markdown("您好，我是百川大模型，很高兴为您服务🥰")
+
+    if "messages" in st.session_state:
+        for message in st.session_state.messages:
+            avatar = '🧑‍💻' if message["role"] == "user" else '🤖'
+            with st.chat_message(message["role"], avatar=avatar):
+                st.markdown(message["content"])
+    else:
+        st.session_state.messages = []
+
+    return st.session_state.messages
+
+def chat_with_baichuan():
+    model, tokenizer = init_model()
+    messages = init_chat_history()
+
+    if prompt := st.chat_input("Shift + Enter 换行, Enter 发送"):
+        with st.chat_message("user", avatar='🧑‍💻'):
+            st.markdown(prompt)
+        messages.append({"role": "user", "content": prompt})
+        print(f"[user] {prompt}", flush=True)
+        with st.chat_message("assistant", avatar='🤖'):
+            placeholder = st.empty()
+            for response in model.chat(tokenizer, messages, stream=True):
+                placeholder.markdown(response)
+                if torch.backends.mps.is_available():
+                    torch.mps.empty_cache()
+        messages.append({"role": "assistant", "content": response})
+        print(json.dumps(messages, ensure_ascii=False), flush=True)
+
+        st.button("清空对话", on_click=clear_chat_history)
 
 st.title("Trained Model Chat")
+model_path_merge = "model_path_merge"
+# model_path_1 = st.selectbox("Select Model 1", ["Baichuan2-7B-Chat", "Other Model 1"])
 chat_on = st.toggle("chat with trained model")
 if chat_on:
-    @st.cache_resource
-    def get_model(model_path):
-        MODEL_PATH = os.environ.get('MODEL_PATH', model_path)
-        TOKENIZER_PATH = os.environ.get("TOKENIZER_PATH", MODEL_PATH)
-        tokenizer = AutoTokenizer.from_pretrained(TOKENIZER_PATH, trust_remote_code=True)
-        model = AutoModel.from_pretrained(MODEL_PATH, trust_remote_code=True, device_map="auto").eval()
-        return tokenizer, model
+    if model_name == "Baichuan2-7B-Chat":
+        chat_with_baichuan()
+    else:
+        @st.cache_resource
+        def get_model(model_path):
+            MODEL_PATH = os.environ.get('MODEL_PATH', model_path)
+            TOKENIZER_PATH = os.environ.get("TOKENIZER_PATH", MODEL_PATH)
+            tokenizer = AutoTokenizer.from_pretrained(TOKENIZER_PATH, trust_remote_code=True)
+            model = AutoModel.from_pretrained(MODEL_PATH, trust_remote_code=True, device_map="auto").eval()
+            return tokenizer, model
 
-    def chat_with_model(model_path):
-        tokenizer, model = get_model(model_path)
+        def chat_with_model(model_path):
+            tokenizer, model = get_model(model_path)
 
-        if "history" not in st.session_state:
-            st.session_state.history = []
-        if "past_key_values" not in st.session_state:
-            st.session_state.past_key_values = None
+            if "history" not in st.session_state:
+                st.session_state.history = []
+            if "past_key_values" not in st.session_state:
+                st.session_state.past_key_values = None
 
-        max_length = st.sidebar.slider("max_length", 0, 32768, 8192, step=1)
-        top_p = st.sidebar.slider("top_p", 0.0, 1.0, 0.8, step=0.01)
-        temperature = st.sidebar.slider("temperature", 0.0, 1.0, 0.6, step=0.01)
+            max_length = st.sidebar.slider("max_length", 0, 32768, 8192, step=1)
+            top_p = st.sidebar.slider("top_p", 0.0, 1.0, 0.8, step=0.01)
+            temperature = st.sidebar.slider("temperature", 0.0, 1.0, 0.6, step=0.01)
 
-        buttonClean = st.sidebar.button("清理会话历史", key="clean")
-        if buttonClean:
-            st.session_state.history = []
-            st.session_state.past_key_values = None
-            if torch.cuda.is_available():
-                torch.cuda.empty_cache()
-            st.rerun()
+            buttonClean = st.sidebar.button("清理会话历史", key="clean")
+            if buttonClean:
+                st.session_state.history = []
+                st.session_state.past_key_values = None
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+                st.rerun()
 
-        for i, message in enumerate(st.session_state.history):
-            if message["role"] == "user":
-                with st.chat_message(name="user", avatar="user"):
-                    st.markdown(message["content"])
-            else:
-                with st.chat_message(name="assistant", avatar="assistant"):
-                    st.markdown(message["content"])
+            for i, message in enumerate(st.session_state.history):
+                if message["role"] == "user":
+                    with st.chat_message(name="user", avatar="user"):
+                        st.markdown(message["content"])
+                else:
+                    with st.chat_message(name="assistant", avatar="assistant"):
+                        st.markdown(message["content"])
 
-        with st.chat_message(name="user", avatar="user"):
-            input_placeholder = st.empty()
-        with st.chat_message(name="assistant", avatar="assistant"):
-            message_placeholder = st.empty()
+            with st.chat_message(name="user", avatar="user"):
+                input_placeholder = st.empty()
+            with st.chat_message(name="assistant", avatar="assistant"):
+                message_placeholder = st.empty()
 
-        prompt_text = st.text_input("请输入您的问题")  # Use text_input instead of chat_input for caching issues
-        if prompt_text:
-            input_placeholder.markdown(prompt_text)
-            history = st.session_state.history
-            past_key_values = st.session_state.past_key_values
-            for response, history, past_key_values in model.stream_chat(
-                    tokenizer,
-                    prompt_text,
-                    history,
-                    past_key_values=past_key_values,
-                    max_length=max_length,
-                    top_p=top_p,
-                    temperature=temperature,
-                    return_past_key_values=True,
-            ):
-                message_placeholder.markdown(response)
-            st.session_state.history = history
-            st.session_state.past_key_values = past_key_values
+            prompt_text = st.text_input("请输入您的问题")  # Use text_input instead of chat_input for caching issues
+            if prompt_text:
+                input_placeholder.markdown(prompt_text)
+                history = st.session_state.history
+                past_key_values = st.session_state.past_key_values
+                for response, history, past_key_values in model.stream_chat(
+                        tokenizer,
+                        prompt_text,
+                        history,
+                        past_key_values=past_key_values,
+                        max_length=max_length,
+                        top_p=top_p,
+                        temperature=temperature,
+                        return_past_key_values=True,
+                ):
+                    message_placeholder.markdown(response)
+                st.session_state.history = history
+                st.session_state.past_key_values = past_key_values
 
-    chat_with_model(model_path)
+        chat_with_model(model_path)
 
 

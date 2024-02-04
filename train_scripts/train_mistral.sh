@@ -1,4 +1,3 @@
-
 CUDA_VISIBLE_DEVICES=0 python ./LLaMA-Factory/src/train_bash.py \
     --stage sft \
     --model_name_or_path /root/autodl-tmp/models/AI-ModelScope/Mistral-7B-v0.1 \
@@ -9,7 +8,7 @@ CUDA_VISIBLE_DEVICES=0 python ./LLaMA-Factory/src/train_bash.py \
     --finetuning_type lora \
     --lora_target q_proj,v_proj \
     --overwrite_cache \
-    --per_device_train_batch_size 1 \
+    --per_device_train_batch_size 2 \
     --gradient_accumulation_steps 2 \
     --eval_steps 500 \
     --lr_scheduler_type cosine \
@@ -17,7 +16,7 @@ CUDA_VISIBLE_DEVICES=0 python ./LLaMA-Factory/src/train_bash.py \
     --save_steps 500 \
     --overwrite_output_dir \
     --output_dir output_models/output_mistral \
-    --learning_rate 2.3614907514396823e-05 \
+    --learning_rate 5e-05 \
     --num_train_epochs 5 \
     --plot_loss \
     --lora_rank 10 \
